@@ -1,0 +1,9 @@
+openbb
+fastapi
+uvicorn
+pydantic
+requests
+pyyaml
+plotly
+pandas
+python-dotenv

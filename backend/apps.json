@@ -1,0 +1,14 @@
+{
+  "bruntsfield_dashboard": {
+    "name": "Bruntsfield Dashboard",
+    "description": "Financial widgets dashboard",
+    "img": "",
+    "allowCustomization": true,
+    "tabs": {
+      "portfolio": {
+        "name": "Portfolio",
+        "widgets": ["portfolio_allocation"]
+      }
+    }
+  }
+}
