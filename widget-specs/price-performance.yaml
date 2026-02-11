@@ -1,0 +1,40 @@
+widget:
+  name: Price Performance Chart
+  id: price_performance
+  category: Equity
+  description: Line chart showing stock price performance over time
+
+data_contract:
+  input:
+    - name: symbol
+      type: str
+      description: Stock ticker symbol
+    - name: period
+      type: str
+      options: [1mo, 3mo, 6mo, 1y, 5y]
+      description: Time period for historical data
+
+states:
+  - Loading: Show spinner while fetching data
+  - Loaded: Display the price chart
+  - Error: Show error message with retry option
+  - Empty: Symbol not found message
+
+interactions:
+  - hover: Show price and date tooltip
+  - zoom: Allow date range selection
+
+parameters:
+  - name: symbol
+    type: text
+    label: Ticker Symbol
+    default: "AAPL"
+  - name: period
+    type: dropdown
+    label: Time Period
+    options: [1mo, 3mo, 6mo, 1y, 5y]
+    default: "1y"
+
+data_source:
+  provider: openbb
+  endpoint: equity/price/historical
